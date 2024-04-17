@@ -1,0 +1,37 @@
+version: "3.7"
+services:
+  db:
+    container_name: blog-hotwire-db
+    image: postgres:16
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ervin
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: blog-hotwire-development
+    ports:
+      - "5433:5432"
+  backend:
+    build: ./blog-hotwire
+    container_name: blog-hotwire-container
+    command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./blog-hotwire:/app/blog-hotwire
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+  redis:
+    container_name: blog-hotwire-redis
+    image: redis:latest
+    restart: always
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - ./tmp/redis_data:/var/lib/redis/data
+    environment:
+      - REDIS_PASSWORD=my-password
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
