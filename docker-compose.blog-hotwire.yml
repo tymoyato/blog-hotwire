@@ -8,7 +8,7 @@ services:
     environment:
       POSTGRES_USER: ervin
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: blog-hotwire-development
+      POSTGRES_DB: blog_hotwire_development
     ports:
       - "5433:5432"
   backend:
