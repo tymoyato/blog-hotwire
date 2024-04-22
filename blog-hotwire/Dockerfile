@@ -1,6 +1,6 @@
 FROM ruby:3.3.0
 RUN apt-get update -qq && apt-get install -y --no-install-recommends apt-utils nodejs lsb-release npm
-RUN npm install --global yarn
+RUN npm install --global yarn esbuild
 RUN apt-get -y install bash-completion wget
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |tee  /etc/apt/sources.list.d/pgdg.list
