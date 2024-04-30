@@ -12,3 +12,16 @@ fr:
   already_registered: "Déjà enregistré ?"  
   email_placeholder: "votre@email.com"
   password_placeholder: "Tapez votre mot de passe"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "mot de passe requis"
+            email:
+              taken: "email déja utilisé"
+  devise:
+    failure:
+      user:
+        not_found_in_database: "Email ou mot de passe invalide."
