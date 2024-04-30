@@ -10,7 +10,6 @@ simple blog using rails 7 with hotwire
 | postgresql **[16]** |
 
 ## Gems
-- simple_form
 - tailwindcss-rails
 ## Development gems
 - bullet
@@ -24,6 +23,7 @@ simple blog using rails 7 with hotwire
 - dotenv
 - factory_bot_rails
 - letter_opener
+- debug
 ```
 rubocop --auto-gen-config
 ```
@@ -43,7 +43,6 @@ postgresql://ervin:postgres@localhost:5433/blog_hotwire_development
 ### Devise
 ```
 rails generate devise:install
-rails generate simple_form:install
 ```
 ### Tailwindcss
 ```

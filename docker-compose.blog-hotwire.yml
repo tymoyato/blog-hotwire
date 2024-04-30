@@ -17,6 +17,7 @@ services:
     command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
     ports:
       - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3009:3009"
     volumes:
       - ./blog-hotwire:/app/blog-hotwire
     depends_on:

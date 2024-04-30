@@ -1,4 +1,4 @@
+AllCops:
+    NewCops: enable
 inherit_from: .rubocop_todo.yml
 
-require:
-  - rubocop-performance
