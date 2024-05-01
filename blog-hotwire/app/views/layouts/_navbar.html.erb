@@ -41,24 +41,8 @@
     <div class="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
 
       <%= render "layouts/locale_modal" %>
+      <%= render "layouts/account_navbar" %>
 
-      <% if user_signed_in? %>
-        <%= button_to(
-          t("sign_out"),
-          destroy_user_session_path,
-          method: :delete,
-          class: "text-sm font-semibold leading-6 text-gray-900",
-        ) %>
-      <% else %>
-
-        <%= link_to t("sign_up"),
-        new_user_registration_path,
-        class: "text-sm font-semibold leading-6 text-gray-900" %>
-
-        <%= link_to t("sign_in"),
-        new_user_session_path,
-        class: "text-sm font-semibold leading-6 text-gray-900" %>
-      <% end %>
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
