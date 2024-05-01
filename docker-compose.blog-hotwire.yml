@@ -24,6 +24,13 @@ services:
       - db
     tty: true
     stdin_open: true
+    links:
+      - mailcatcher
+  mailcatcher:
+    image: yappabe/mailcatcher
+    ports:
+      - "1025:1025"
+      - "1080:1080"
   redis:
     container_name: blog-hotwire-redis
     image: redis:latest

@@ -45,6 +45,10 @@ CREATE TABLE public.users (
     reset_password_token character varying,
     reset_password_sent_at timestamp(6) without time zone,
     remember_created_at timestamp(6) without time zone,
+    confirmation_token character varying,
+    confirmed_at timestamp(6) without time zone,
+    confirmation_sent_at timestamp(6) without time zone,
+    unconfirmed_email character varying,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );

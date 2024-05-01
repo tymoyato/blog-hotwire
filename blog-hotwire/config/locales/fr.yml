@@ -24,4 +24,5 @@ fr:
   devise:
     failure:
       user:
+        unauthenticated: "Vous devez vous connecter ou vous inscrire avant de continuer."
         not_found_in_database: "Email ou mot de passe invalide."

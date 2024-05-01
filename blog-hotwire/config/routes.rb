@@ -2,7 +2,6 @@
 
 Rails.application.routes.draw do
   post '/change_locale', to: 'application#change_locale'
-
   scope "/:locale" do
     devise_for :users
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
