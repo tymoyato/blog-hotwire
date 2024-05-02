@@ -14,6 +14,4 @@ Rails.application.routes.draw do
     root "pages#home"
   end
   get '*path', to: redirect("/#{I18n.locale}")
-  # match '/', via: %i[post put patch delete], to: 'pages#test', format: false
-  # match '*unmatched_route', via: :all, to: 'pages#test', format: false
 end

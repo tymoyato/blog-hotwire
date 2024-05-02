@@ -4,6 +4,8 @@ fr:
   sign_out: "Déconnexion"
   sign_in_title: "Connectez-vous à votre compte"
   sign_up_title: "Enregistrer un nouveau compte"
+  edit_title: "Informations personnelles"
+  account: "Compte"
   email: "Email"
   password: "Mot de passe"
   password_confirmation: "Confirmez le mot de passe"

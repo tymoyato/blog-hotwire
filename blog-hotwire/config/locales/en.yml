@@ -4,6 +4,8 @@ en:
   sign_out: "Sign out"
   sign_in_title: "Sign in to your account"
   sign_up_title: "Register new account"
+  edit_title: "Personal information"
+  account: "Account"
   email: "Email"
   password: "Password"
   password_confirmation: "Confirm password"
