@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   post '/change_locale', to: 'application#change_locale'
+  root to: redirect("/#{I18n.locale}"), as: :redirected_root
+
   scope "/:locale" do
     devise_for :users
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
     # Can be used by load balancers and uptime monitors to verify that the app is live.
     get 'up' => 'rails/health#show', as: :rails_health_check
     root "pages#home"
-    get 'test', to: 'pages#test'
   end
+  get '*path', to: redirect("/#{I18n.locale}")
+  # match '/', via: %i[post put patch delete], to: 'pages#test', format: false
+  # match '*unmatched_route', via: :all, to: 'pages#test', format: false
 end
