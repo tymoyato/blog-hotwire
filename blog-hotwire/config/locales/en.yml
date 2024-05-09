@@ -14,3 +14,25 @@ en:
   already_registered: "Already registered ?"  
   email_placeholder: "your@email.com"
   password_placeholder: "Enter your password"
+  index:
+    blog: "Blog"
+    articles: "My articles"
+  posts:
+      index:
+        title: "From the Blog"
+        description: "Learn how to grow your business with our expert advice."
+      new:
+        title: "Write your article"
+        description: "Add an article to your blog."
+        button: "Publish"
+      edit:
+        title: "Edit your article"
+        description: "Edit your article on your blog."
+        button: "Update"
+      form:
+        title_placeholder: "Title.."
+        body_placeholder: "Write your story..."
+        button: "Publish"
+  own_posts:
+    title: "My articles"
+    description: "Click on an article to edit."

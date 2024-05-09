@@ -9,3 +9,26 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+#
+user = User.create!(email: 'test@test.com', password: 'foobar', password_confirmation: 'foobar', confirmed_at: Time.now, confirmation_sent_at: Time.now)
+
+10.times do |_i|
+  user.posts.create!(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(sentence_count: 100))
+end
+
+10.times do |i|
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: 'password',
+    password_confirmation: 'password'
+  )
+
+  10.times do |_j|
+    user.posts.create!(
+      title: Faker::Lorem.sentence,
+      body: Faker::Lorem.paragraph(sentence_count: 100)
+    )
+  end
+
+  puts "User #{i + 1} created. with 10 posts"
+end

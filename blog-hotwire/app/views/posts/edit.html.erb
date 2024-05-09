@@ -1,0 +1,10 @@
+<%= render("layouts/page_title", title: t('posts.edit.title'), description: t('posts.edit.description')) do %>
+  <div class="isolate">
+    <%= render(
+      "posts/form",
+      title_placeholder: t("posts.form.title_placeholder"),
+      body_placeholder: t("posts.form.body_placeholder"),
+      button: t("posts.form.button"),
+    ) %>
+  </div>
+<% end %>

@@ -28,3 +28,25 @@ fr:
       user:
         unauthenticated: "Vous devez vous connecter ou vous inscrire avant de continuer."
         not_found_in_database: "Email ou mot de passe invalide."
+  index:
+    blog: "Blog"
+    articles: "Mes articles"
+  posts:
+      index:
+        title: "Article du Blog"
+        description: "Learn how to grow your business with our expert advice."
+      new:
+        title: "Ecrivez votre article"
+        description: "Ajouter un article sur votre blog."
+        button: "Publier"
+      edit:
+        title: "Modifier votre article"
+        description: "Ajouter une modification sur votre article."
+        button: "Modifier"
+      form:
+        title_placeholder: "Titre.."
+        body_placeholder: "Ecrivez votre histoire..."
+        button: "Publier"
+  own_posts:
+    title: "Mes articles"
+    description: "Cliquez sur un article pour le modifier."
