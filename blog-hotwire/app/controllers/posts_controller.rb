@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :load_post, only: %i[show edit update destroy]
+  authorize_resource
 
   def index
     @posts = Post.order(created_at: :desc).limit(10).includes(:user)
@@ -45,7 +46,7 @@ class PostsController < ApplicationController
 
   private
 
-  def set_post
+  def load_post
     @post = Post.find(params[:id])
   end
 
