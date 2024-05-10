@@ -10,7 +10,10 @@ simple blog using rails 7 with hotwire
 | postgresql **[16]** |
 
 ## Gems
+- devise
 - tailwindcss-rails
+- simple_form
+- cancancan
 ## Development gems
 - bullet
 - rubocop
