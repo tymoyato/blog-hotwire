@@ -8,7 +8,7 @@ class Ability
 
     return unless user.present?
 
-    can(%i[create read update edit destroy], Post, user: user)
+    can(%i[create read update edit destroy own_posts], Post, user: user)
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

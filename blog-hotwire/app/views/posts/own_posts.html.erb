@@ -1,3 +1,5 @@
-<%= render("layouts/page_title", title: t('own_posts.title'), description: t('own_posts.description')) do %>
-  <%= render("posts/articles") %>
+<%= turbo_frame_tag "first_turbo_frame" do %>
+  <%= render("layouts/page_title", title: t('own_posts.title'), description: t('own_posts.description')) do %>
+    <%= render("posts/articles") %>
+  <% end %>
 <% end %>

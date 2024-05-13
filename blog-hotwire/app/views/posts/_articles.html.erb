@@ -1,9 +1,9 @@
 <% @posts.each do |post| %>
-
   <%= link_to edit_post_path(post, locale: I18n.locale) do %>
     <article
       class="
         flex flex-col items-start justify-between rounded-lg pb-6 pt-6 px-8 bg-violet-50
+        mb-6
       "
     >
 
@@ -52,5 +52,4 @@
       </div>
     </article>
   <% end %>
-
 <% end %>

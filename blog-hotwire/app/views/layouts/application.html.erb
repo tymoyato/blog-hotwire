@@ -17,6 +17,7 @@
   <body>
     <% unless controller_name.in?(%w[sessions registrations passwords confirmations unlocks]) %>
       <%= render "layouts/navbar" %>
+
       <div class="bg-white">
         <div class="relative isolate px-6 pt-14 lg:px-8">
           <div

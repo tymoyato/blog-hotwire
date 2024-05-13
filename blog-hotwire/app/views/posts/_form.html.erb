@@ -4,7 +4,7 @@
 
       <div class="relative">
         <%= f.text_field :title,
-                     placeholder: t('posts.form.title_placeholder'),
+                     placeholder: t("posts.form.title_placeholder"),
                      class:
                        "block w-full border-0 px-3.5 py-2 text-gray-900 shadow-sm placeholder:text-gray-400 outline-none bg-transparent text-4xl focus:[box-shadow:none]" %>
       </div>
@@ -13,7 +13,7 @@
       <div class="">
         <%= f.text_area :body,
                     rows: 4,
-                    placeholder: t('posts.form.body_placeholder'),
+                    placeholder: t("posts.form.body_placeholder"),
                     class:
                       "block w-full px-3.5 py-2 text-gray-900 placeholder:text-gray-400 bg-transparent                                                                                                                                                                     border-none focus:[box-shadow:none]" %>
       </div>
@@ -21,7 +21,8 @@
 
   </div>
   <div class="mt-10">
-    <%= f.submit t('posts.form.button'), class:
-               "block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm                                                                                                                                                    font-semibold text-white shadow-sm hover:bg-indigo-500" %>
+    <%= f.submit t("posts.form.button"),
+             class:
+               "block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm                                                                                                                                                    font-semibold text-white shadow-sm hover:bg-indigo-500", data: {turbo_frame: "_top"} %>
   </div>
 <% end %>
