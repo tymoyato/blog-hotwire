@@ -68,6 +68,69 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: taggeds; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.taggeds (
+    id bigint NOT NULL,
+    post_id bigint NOT NULL,
+    tag_id bigint NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: taggeds_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.taggeds_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: taggeds_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.taggeds_id_seq OWNED BY public.taggeds.id;
+
+
+--
+-- Name: tags; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tags (
+    id bigint NOT NULL,
+    name character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: tags_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.tags_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.tags_id_seq OWNED BY public.tags.id;
+
+
+--
 -- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -114,6 +177,20 @@ ALTER TABLE ONLY public.posts ALTER COLUMN id SET DEFAULT nextval('public.posts_
 
 
 --
+-- Name: taggeds id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.taggeds ALTER COLUMN id SET DEFAULT nextval('public.taggeds_id_seq'::regclass);
+
+
+--
+-- Name: tags id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tags ALTER COLUMN id SET DEFAULT nextval('public.tags_id_seq'::regclass);
+
+
+--
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -145,6 +222,22 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: taggeds taggeds_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.taggeds
+    ADD CONSTRAINT taggeds_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tags tags_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tags
+    ADD CONSTRAINT tags_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -157,6 +250,20 @@ ALTER TABLE ONLY public.users
 --
 
 CREATE INDEX index_posts_on_user_id ON public.posts USING btree (user_id);
+
+
+--
+-- Name: index_taggeds_on_post_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_taggeds_on_post_id ON public.taggeds USING btree (post_id);
+
+
+--
+-- Name: index_taggeds_on_tag_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_taggeds_on_tag_id ON public.taggeds USING btree (tag_id);
 
 
 --
@@ -182,12 +289,30 @@ ALTER TABLE ONLY public.posts
 
 
 --
+-- Name: taggeds fk_rails_9dd2e79ec5; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.taggeds
+    ADD CONSTRAINT fk_rails_9dd2e79ec5 FOREIGN KEY (tag_id) REFERENCES public.tags(id);
+
+
+--
+-- Name: taggeds fk_rails_a71fe1cc02; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.taggeds
+    ADD CONSTRAINT fk_rails_a71fe1cc02 FOREIGN KEY (post_id) REFERENCES public.posts(id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240513125504'),
+('20240513123912'),
 ('20240507150543'),
 ('20240418141511');
 
