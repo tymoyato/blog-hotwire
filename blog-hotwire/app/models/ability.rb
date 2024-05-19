@@ -5,10 +5,12 @@ class Ability
 
   def initialize(user)
     can :read, Post
+    can :read, Tag
 
     return unless user.present?
 
     can(%i[create read update edit destroy own_posts], Post, user: user)
+    can(%i[create read update edit destroy own_posts], Tag, user: user)
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

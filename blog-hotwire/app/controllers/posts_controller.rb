@@ -1,10 +1,15 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :load_post, only: %i[show edit update destroy]
   authorize_resource
 
   def index
-    @posts = Post.order(created_at: :desc).limit(10).includes(:user)
+    # @posts = Post.order(created_at: :desc).limit(10).includes(:user)
+    @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:user), items: 10)
+
+    render 'posts/scrollable_post' if params[:page]
   end
 
   def show; end

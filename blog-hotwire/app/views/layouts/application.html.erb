@@ -8,7 +8,6 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application",
     "data-turbo-track": "reload",
     type: "module" %>
@@ -58,5 +57,9 @@
     <main>
       <%= yield %>
     </main>
+    <footer class="bg-white">
+      <div class="mx-auto max-w-7xl py-12 flex items-center justify-between">
+      </div>
+    </footer>
   </body>
 </html>

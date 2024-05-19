@@ -1,3 +1,10 @@
 <%= render("layouts/page_title", title: t('posts.index.title'), description: t('posts.index.description')) do %>
+<div
+      class="
+        mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 border-t
+        border-gray-200 pt-10
+      "
+    >
   <%= render("posts/post") %>
+  </div
 <% end %>

@@ -19,6 +19,7 @@ end
 10.times do |i|
   user = User.create!(
     email: Faker::Internet.email,
+    username: "#{Faker::Name.first_name} " + "#{Faker::Name.last_name}",
     password: 'password',
     password_confirmation: 'password'
   )

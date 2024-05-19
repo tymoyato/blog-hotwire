@@ -105,7 +105,7 @@ ALTER SEQUENCE public.taggeds_id_seq OWNED BY public.taggeds.id;
 
 CREATE TABLE public.tags (
     id bigint NOT NULL,
-    name character varying,
+    name character varying(50) NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );
@@ -145,6 +145,7 @@ CREATE TABLE public.users (
     confirmed_at timestamp(6) without time zone,
     confirmation_sent_at timestamp(6) without time zone,
     unconfirmed_email character varying,
+    username character varying DEFAULT ''::character varying NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );

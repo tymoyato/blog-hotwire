@@ -1,19 +1,26 @@
 <%= turbo_frame_tag "first_turbo_frame" do %>
   <%= render("layouts/page_title", title: t('posts.edit.title'), description: t('posts.edit.description')) do %>
-    <div class="flex items-center justify-end gap-x-6">
-      <%= link_to raw("My articles <span aria-hidden='true'>&rarr;</span>"),
-      articles_path(locale: I18n.locale),
-      class:
-        "rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2
-                                         focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
-    </div>
-    <div class="isolate">
-      <%= render(
-        "posts/form",
-        title_placeholder: t("posts.form.title_placeholder"),
-        body_placeholder: t("posts.form.body_placeholder"),
-        button: t("posts.form.button"),
-      ) %>
+    <div
+      class="
+        mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t
+        border-gray-200 pt-10
+      "
+    >
+      <div class="flex items-center justify-end gap-x-6">
+        <%= link_to raw("My articles <span aria-hidden='true'>&rarr;</span>"),
+        articles_path(locale: I18n.locale),
+        class:
+          "rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2
+                                                 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+      </div>
+      <div class="isolate">
+        <%= render(
+          "posts/form",
+          title_placeholder: t("posts.form.title_placeholder"),
+          body_placeholder: t("posts.form.body_placeholder"),
+          button: t("posts.form.button"),
+        ) %>
+      </div>
     </div>
   <% end %>
 <% end %>
