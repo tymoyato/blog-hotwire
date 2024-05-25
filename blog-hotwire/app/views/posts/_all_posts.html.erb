@@ -4,8 +4,8 @@
   "
 >
   <div class="flex items-center gap-x-4 text-xs">
-    <time datetime="2020-03-16" class="text-gray-500"><%= @post.created_at.strftime("%b %d, %Y") %></time>
-    <% @post.tags.pluck(:name).each do |name| %>
+    <time datetime="2020-03-16" class="text-gray-500"><%= post.created_at.strftime("%b %d, %Y") %></time>
+    <% post.tags.pluck(:name).each do |name| %>
       <div
         class="
           relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600
@@ -23,11 +23,12 @@
     >
       <div>
         <span class="absolute inset-0"></span>
-        <%= @post.title %>
+
+        <%= post.title %>
       </div>
     </h3>
-    <p class="mt-5 text-sm leading-6 text-gray-600">
-      <%= @post.body %>
+    <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+      <%= post.body %>
     </p>
   </div>
 
@@ -41,10 +42,10 @@
       <p class="font-semibold text-gray-900">
         <div>
           <span class="absolute inset-0"></span>
-          <%= @post.user.username %>
+          <%= post.user.username %>
         </div>
       </p>
-      <p class="text-gray-600"><%= @post.user.email %></p>
+      <p class="text-gray-600"><%= post.user.email %></p>
     </div>
   </div>
 </article>

@@ -13,6 +13,8 @@ services:
       - "5433:5432"
   backend:
     build: ./blog-hotwire
+    tty: true
+    stdin_open: true
     container_name: blog-hotwire-container
     command: bash -c "rm -f tmp/pids/server.pid && bin/dev"
     ports:
@@ -22,8 +24,6 @@ services:
       - ./blog-hotwire:/app/blog-hotwire
     depends_on:
       - db
-    tty: true
-    stdin_open: true
     links:
       - mailcatcher
   mailcatcher:

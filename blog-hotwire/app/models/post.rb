@@ -16,5 +16,5 @@ class Post < ApplicationRecord
   has_many :taggeds, dependent: :destroy
   has_many :tags, through: :taggeds
 
-  validates :title, :body, presence: true
+  validates :title, :body, presence: true 
 end
