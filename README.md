@@ -14,6 +14,7 @@ simple blog using rails 7 with hotwire
 - tailwindcss-rails
 - simple_form
 - cancancan
+- pagy
 ## Development gems
 - bullet
 - rubocop
