@@ -1,6 +1,6 @@
 # blog-hotwire
 simple blog using rails 7 with hotwire
-
+![alt text](https://github.com/tymoyato/blog-hotwire/blob/main/blog-hotwire/app/assets/images/blog.png)
 ## Versions
 
 | backend                |
