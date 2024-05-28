@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   authorize_resource
 
   def index
-    @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:user), items: 10)
+    @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:user), items: 3)
     # @pagy, @posts = pagy(Post.order(created_at: :desc).includes(:user, :taggeds, :tags), items: 10)
 
     render 'posts/scrollable_post' if params[:page]

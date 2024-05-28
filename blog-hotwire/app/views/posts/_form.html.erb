@@ -22,7 +22,7 @@
     <div class="sm:col-span-2">
       <div class="relative mt-2 rounded-md shadow-sm">
         <%= f.text_field :tags,
-                     value: @tags.join(", "),
+                     value: @tags&.join(", "),
                      placeholder: "Add tags",
                      id: "post_tags",
                      class:
