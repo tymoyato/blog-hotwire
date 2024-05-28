@@ -1,7 +1,7 @@
 <div class=" mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 ">
   <% @posts.each do |post| %>
 
-    <%= link_to post_path(post, locale: I18n.locale) do %>
+    <%= link_to post_path(post, locale: I18n.locale), data: { turbo_frame: "_top" } do %>
       <%= render("posts/all_posts", post: post) %>
     <% end %>
 
